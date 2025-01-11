@@ -1,0 +1,33 @@
+.animate_hinge{
+    animation-duration: 10s
+  }
+
+  .rotate-y {
+    animation: rotateY 3s infinite linear;
+  }
+  
+  @keyframes rotateY {
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .btn_confirm{
+    padding: 10px 50px;
+    color: white;
+    background: seagreen;
+    margin: 0 20px;
+    border-radius: 10px;
+  }
+  .btn_denied{
+    padding: 10px 50px;
+    color: gray;
+    background: wheat;
+    margin: 0 20px;
+    border-radius: 10px;
+    &:hover{
+        background: red;
+        color: white;
+        transition: all 0.5s ease-in-out;
+    }
+  }

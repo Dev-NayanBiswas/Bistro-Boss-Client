@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities{
+    .navActive{
+        @apply font-cin font-semibold text-xl border-b-[2px] border-[#fcde67] text-[#fcde67] px-8 py-1
+    }
+    .navInActive{
+        @apply font-cin font-semibold text-xl border-b-[2px] border-transparent text-gray-800 px-8 py-1
+    }
+}
