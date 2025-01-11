@@ -6,7 +6,7 @@ function useUsersCURD(){
 async function allUsers(){
     const response = await axiosSecure.get("/users",
       {
-        withCredentials:true,
+        // withCredentials:true,
       headers:{
         Authorization:`Bearer ${localStorage.getItem("ClientToken")}`
       }

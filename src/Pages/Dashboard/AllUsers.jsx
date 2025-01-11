@@ -3,15 +3,16 @@ import useUsersMutations from "../../Hooks/useUsersMutations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Heading from "../../Components/Heading/Heading";
 import {faUserCog, faUsersGear } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import useAdmin from "../../Hooks/useAdmin";
 
 function AllUsers() {
   const {queryUsers } = useUsersMutations();
+  const {data:adminInfo, isLoading:adminLoading, isError:adminIsError, error:adminError} = useAdmin();
 
 
   const { data, isLoading, isError, error } = queryUsers;
 
-  if (isLoading) {
+  if (isLoading || adminLoading) {
     return (
       <p className='text-center text-5xl text-green-500 font-semibold italic'>
         Loading . . .
@@ -19,15 +20,17 @@ function AllUsers() {
     );
   }
 
-  if (isError) {
-    console.log(error)
+  if (isError||adminIsError) {
+    console.log(adminError? error : adminError)
     return (
       <p className='text-center text-5xl text-red-500 font-semibold italic'>
-        {error.response.data.message}
+        {error?.response?.data?.message}
       </p>
     );
   }
 
+
+  console.log(adminInfo.data.isAdmin)
 
   const heading = {
     small:"All users here",
