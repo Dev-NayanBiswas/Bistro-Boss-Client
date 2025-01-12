@@ -24,7 +24,7 @@ function useAxiosSecure(){
     return response;
   },
 (error)=>{
-  console.log("Error in Response", );
+  console.log("Error in Response");
   if(error?.response?.status === 401 || error?.response?.status === 403){
     signOutHandler()
   }
