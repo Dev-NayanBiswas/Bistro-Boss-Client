@@ -13,11 +13,13 @@ function AdminRoute({children}){
     if(adminLoading || adminPending || isLoading){
       return <Loading/>
     }
+
+    console.log(isAdmin)
     
-    if(userInfo?.email && isAdmin){
+    if(userInfo?.email && isAdmin?.data?.isAdmin){
         return children
     }
-  return <Navigate to={"/login"} state={location.pathname} replace/>
+  return <Navigate to={"/"} state={location.pathname} replace/>
 }
 
 export default AdminRoute

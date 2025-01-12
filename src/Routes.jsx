@@ -24,6 +24,7 @@ import AdminHome from "./Pages/Dashboard/Admin/AdminHome";
 import AdminItems from "./Pages/Dashboard/Admin/AdminItems";
 import ManageItems from "./Pages/Dashboard/Admin/ManageItems";
 import ManageBookings from "./Pages/Dashboard/Admin/ManageBookings";
+import AdminRoute from "./Pages/PrivateRoute/AdminRoute";
 
 const Routes = createBrowserRouter([
   {
@@ -124,24 +125,34 @@ const Routes = createBrowserRouter([
       },
       {
         path: "users",
-        element: <AllUsers />,
+        element: <AdminRoute>
+          <AllUsers />
+        </AdminRoute>,
       },
       {
         path: "adminHome",
-        element: <AdminHome />,
+        element: <AdminRoute>
+          <AdminHome />
+        </AdminRoute>,
       },
 
       {
         path: "items",
-        element: <AdminItems />,
+        element: <AdminRoute>
+          <AdminItems />
+        </AdminRoute>,
       },
       {
         path: "manage",
-        element: <ManageItems />,
+        element: <AdminRoute>
+          <ManageItems />
+        </AdminRoute>,
       },
       {
         path: "booking",
-        element: <ManageBookings />,
+        element: <AdminRoute>
+          <ManageBookings />
+        </AdminRoute>,
       },
     ],
   },

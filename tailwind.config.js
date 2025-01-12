@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      colors:{
+        'holud':'#fcde67',
+        'sonali':'#d1a054'
+      },
       fontFamily:{
         cin:["Cinzel", 'serif']
       }
